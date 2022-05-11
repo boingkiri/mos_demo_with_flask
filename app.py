@@ -11,7 +11,18 @@ def index():
         }
     if request.method == "POST":
         user = request.form.get('user')
+        A = request.form.get('A')
+        B = request.form.get('B')
         print(user)
+        print(A)
+        print(B)
+        with open('tmp.txt','w') as f:
+            if A == 'on':
+                f.writelines('A\n')
+            elif B == 'on':
+                f.writelines('B\n')
+            else:
+                f.writelines('None\n')
     elif request.method == 'GET':
         print('GETGET')
         user = "반원웡원"
